@@ -40,6 +40,9 @@ class MainActivity : ComponentActivity() {
                     composable("login") {
                         LoginScreen()
                     }
+                    composable("register") {
+                        RegisterScreen()
+                    }
                 }
             }
         }
@@ -176,3 +179,79 @@ fun LoginScreen() {
         } */
     }
   }
+
+@Composable
+fun RegisterScreen() {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(24.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(
+            text = "Create Account",
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color(0xFF1D4ED8)
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        Text(
+            text = "Create an account so you can explore all the existing jobs",
+            fontSize = 16.sp,
+            textAlign = TextAlign.Center
+        )
+        Spacer(modifier = Modifier.height(32.dp))
+
+        OutlinedTextField(
+            value = "",
+            onValueChange = {},
+            label = { Text("Email") },
+            modifier = Modifier.fillMaxWidth()
+        )
+        Spacer(modifier = Modifier.height(16.dp))
+        OutlinedTextField(
+            value = "",
+            onValueChange = {},
+            label = { Text("Password") },
+            modifier = Modifier.fillMaxWidth()
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        OutlinedTextField(
+            value = "",
+            onValueChange = {},
+            label = { Text("Confirm Password") },
+            modifier = Modifier.fillMaxWidth()
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Button(
+            onClick = {},
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(50.dp),
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF1D4ED8))
+        ) {
+            Text("Sign up", color = Color.White, fontSize = 16.sp)
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+        Text(text = "Already have an accouint")
+
+        Spacer(modifier = Modifier.height(24.dp))
+        Text(text = "Or continue with", color = Color.Gray)
+
+        /* Spacer(modifier = Modifier.height(16.dp))
+        Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+         IconButton(onClick = { /* Google */ }) {
+             Icon(painter = painterResource(R.drawable.ic_google), contentDescription = "Google")
+         }
+         IconButton(onClick = { /* Facebook */ }) {
+             Icon(painter = painterResource(R.drawable.ic_facebook), contentDescription = "Facebook")
+         }
+         IconButton(onClick = { /* Apple */ }) {
+             Icon(painter = painterResource(R.drawable.ic_apple), contentDescription = "Apple")
+         }
+        } */
+    }
+}
