@@ -96,7 +96,11 @@ fun WelcomeScreen(navController: androidx.navigation.NavHostController) {
             ) {
                 Text("Login", color = Color.White)
             }
-            TextButton(onClick = { }) {
+            TextButton(
+                onClick = {
+                    navController.navigate("register")
+                }
+            ) {
                 Text("Register", fontWeight = FontWeight.Bold)
             }
         }
